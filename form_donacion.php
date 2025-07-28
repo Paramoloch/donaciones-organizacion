@@ -13,6 +13,7 @@ $donantes = $conexion->query("SELECT id_donante, nombre FROM DONANTE");
 <head>
   <meta charset="UTF-8">
   <title>Registrar Donación</title>
+  <link rel="stlyesheet" href="style.css">
 </head>
 <body>
   <h2>Registrar Donación</h2>
