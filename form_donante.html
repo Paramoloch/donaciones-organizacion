@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Agregar Donante</title>
+  <script>
+    function validarDonante() {
+      const nombre = document.forms["formDonante"]["nombre"].value;
+      const email = document.forms["formDonante"]["email"].value;
+
+      if (nombre === "" || email === "") {
+        alert("Por favor, completa nombre y email.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>Agregar Donante</h2>
+  <form name="formDonante" action="insertar_donante.php" method="POST" onsubmit="return validarDonante();">
+    <label>Nombre:</label><br>
+    <input type="text" name="nombre" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Dirección:</label><br>
+    <input type="text" name="direccion"><br><br>
+
+    <label>Teléfono:</label><br>
+    <input type="text" name="telefono"><br><br>
+
+    <input type="submit" value="Guardar Donante">
+  </form>
+</body>
+</html>

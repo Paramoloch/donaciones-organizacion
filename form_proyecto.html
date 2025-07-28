@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar proyectos</title>
+    <script>
+        function validarProyecto(){
+            const nombre = document.forms["formProyecto"]["nombre"].value;
+            const presupuesto = document.forms["formProyecto"]["presupuesto"].value;
+
+            if (nombre === "" || presupuesto === "") {
+                alert("Por favor, complete los campos obligatorios.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Agregar Proyecto</h2>
+    <form name="formProyecto" action="insertar_proyecto.php" method="POST" onsubmit="return validarProyecto()">
+        <label for="nombre">Nombre del Proyecto:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" cols="50"></textarea><br><br>
+
+        <label for="presupuesto">Presupuesto:</label>
+        <input type="number" id="presupuesto" name="presupuesto" required><br><br>
+
+        <label for="fecha_inicio">Fecha de Inicio:</label>
+        <input type="date" id="fecha_inicio" name="fecha_inicio"><br><br>
+        <label for="fecha_fin">Fecha de Fin:</label>
+        <input type="date" id="fecha_fin" name="fecha_fin"><br><br>
+        <input type="submit" value="Agregar Proyecto">
+    </form>
+    </body>
+</html>
